@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 18px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0073bb;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #005a8c;
+        }
+
+        small {
+            color: gray;
+        }
+
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Employment Application</h1>
+        <p>Please complete all fields to apply.</p>
+
+        <form onsubmit="submitForm(event)">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" required>
+
+            <label for="email">Email Address</label>
+            <input id="email" type="email" required>
+
+            <label for="position">Position Applied For</label>
+            <select id="position" required>
+                <option value="">-- Select --</option>
+                <option>Cloud Engineer</option>
+                <option>DevOps Engineer</option>
+                <option>Backend Developer</option>
+            </select>
+
+            <label for="cv">Upload CV (PDF only)</label>
+            <input id="cv" type="file" accept=".pdf" disabled>
+            <small>CV upload will be enabled after backend setup</small>
+
+            <button type="submit">Submit Application</button>
+        </form>
+
+        <div id="status"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
